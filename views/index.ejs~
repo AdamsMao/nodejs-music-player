@@ -1,0 +1,35 @@
+<fieldset>
+	<legend> 下午茶，听海 </legend>
+	<div class='inner' id='inner'>				
+	</div>
+	<br><br>
+	<div>
+		<div class="controls">
+			<a class="btn btn-primary" href="/upload" id="upload" >上传音乐</a>					
+		</div>	
+	</div>
+</fieldset>
+
+
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/stylesheets/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+<script src="/javascripts/jQuery-1.7.1.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/player.js"></script>
+<script src="/javascripts/play.js"></script>
+
+<script>
+	$(document).ready(function(){
+		//
+		$.ajax({
+			type: 'GET',
+			url: '/get_files'
+		}).done(function( data ) {
+			$.each(data, function(n, v) {
+				$('#inner').append("<div> <input type='button' value='" + v + "' class='btn btn-link' id='songs'/> " + "</div>");
+			});
+		});	
+	});
+</script>
+
+

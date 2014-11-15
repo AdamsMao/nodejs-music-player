@@ -1,0 +1,41 @@
+
+	<div class="container-fluid">
+			<form class="form-horizontal" method="post" enctype="multipart/form-data" action="/file-upload">
+					<fieldset>
+							<legend>音乐上传</legend>
+							<div class="control-group">
+									<label class="control-label" for="username"> 选择音乐文件 </label>
+									<div class="controls">
+											<input type="file" class="input-xlarge" id="thumbnail" name="thumbnail">
+											<input type="submit" class="btn btn-primary" id="upload" name="upload" value="上传">
+									</div>
+							</div>
+							<br><br>
+							<div>
+									<a class="btn btn-primary" href="/" id="home" > 首页 </a>	
+							</div>
+					</fieldset>
+			</form>
+	</div>
+
+
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/stylesheets/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+<script src="/javascripts/jQuery-1.7.1.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+
+<script>
+	$(window).load(function(){	
+		$("#thumbnail").change(function(evt){					
+			if (!window.FileReader) return;
+			var files = evt.target.files;
+			for (var i = 0, f; f = files[i]; i++) {
+				 if(!f.name.match(/(.mp3|.ogg|.wma|.ape)$/)) {
+					alert("请选择一个音乐格式的文件上传噢!");
+					$("#thumbnail").val('');					
+				    	return;
+				}
+			}				
+		});
+	});
+</script>
