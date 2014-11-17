@@ -1,10 +1,14 @@
-nodejs-music-player
-===================
+Simple nodejs project used to manage files. You can upload or download files in separate webpage. 
 
-苦逼的码农，在默默工作之时，如果能有自己喜欢的音乐music陪伴，那是何等美哉！
-下午茶，听海 
+next steps: 
+1. now, it seems only can upload small size file, how to improve it in order to upload bigger size files. 
+2. beautify the look.
 
-使用方法：下载或克隆到本机，解压，进入文件夹用命令 sudo npm install 安装依赖包，最后node app.js启动！浏览器输入http://localhost:3000享受音乐吧。
+实现了：
+1. 文件上传功能，
+2. 文件下载功能。
 
-License: MIT
+下一步需解决：
+1. 上传不了大文件，
+2. 界面优化。
 
